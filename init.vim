@@ -12,16 +12,12 @@ Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-" Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-" Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-" Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'Mofiqul/dracula.nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
  " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 " Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-" Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 " Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 
 set encoding=UTF-8
@@ -33,18 +29,13 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
-nmap <F8> :TagbarToggle<CR>
-
 :set completeopt-=preview " For No Previews
 
 :colorscheme dracula
-" --- Just Some Notes ---
-" :PlugClean :PlugInstall :UpdateRemotePlugins
-"
-" :CocInstall coc-python
-" :CocInstall coc-clangd
-" :CocInstall coc-snippets
-" :CocCommand snippets.edit... FOR EACH FILE TYPE
+let g:airline_theme = 'dracula'
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " air-line
 let g:airline_powerline_fonts = 1
